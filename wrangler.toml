@@ -1,0 +1,20 @@
+name = "game-hub-api"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+MAIL_FROM = "you@example.com"        # sender address you verified in Brevo
+ADMIN_EMAILS = "you@gmail.com"       # comma separated list of moderator accounts
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hub-db"
+database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"
+
+[[durable_objects.bindings]]
+name = "LOBBY"
+class_name = "Lobby"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Lobby"]
